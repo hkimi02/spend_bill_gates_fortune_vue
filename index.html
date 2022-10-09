@@ -10,22 +10,45 @@
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./style/style.css">
+    <script src="./script/vue.global.js"></script>
     <title>spend bill gates fortune </title>
 </head>
 
 <body>
-    <nav class="navbar bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="./assets/images/bill_gates_icon.png" alt="Bootstrap" width="60" height="54">
-            </a>
-            <h1>
-                <center>spend <span class="colored">bill gates</span> fortune </center>
-            </h1>
-        </div>
-        <span class="cart"><center>cart </center>
+    <div id="app">
+        <nav class="navbar bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/images/bill_gates_icon.png" alt="Bootstrap" width="60" height="54">
+                </a>
+                <h1 class="center">
+                    spend <span class="colored">bill gates</span> fortune
+                </h1>
+                <br> <span>{{"bill gates net fortune : "+fortune+"$"}}</span>
+            </div>
+            <span class="cart"><center>cart ({{cart}})</center>
         <br></span>
-    </nav>
+        </nav>
+        <section>
+            <div class="articles">
+                <article class="article" v-for="article in articles">
+                    <div class="article_image">
+                        <img :src="article.path" alt="">
+                    </div>
+                    <div class="article_details">
+                        <h1>{{article.name}}</h1>
+                        <h1>{{article.price+"$"}}</h1>
+                    </div>
+                    <div class="operation">
+                        <button class="buy btn btn-success" @click="addToCart(article)">buy</button>
+                        <button class="btn btn-warning">{{article.quantity}}</button>
+                        <button class="sell btn btn-danger" @click="removeFromCart(article)">sell</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+    <script src="./script/main.js"></script>
 </body>
 
 </html>

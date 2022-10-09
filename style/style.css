@@ -39,6 +39,41 @@
             width: 5rem;
             border-radius: var(--border-radius-1);
         }
-        .colored{
-            
+        
+        .colored {
+            color: var(--color-success);
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        .articles {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            text-align: center;
+        }
+        
+        .article {
+            background: #fff;
+            padding: 1.8rem;
+            border-radius: 2rem;
+            width: 25rem;
+            height: 30rem;
+            margin-top: 1rem;
+            box-shadow: 0 2rem 3rem lightgrey;
+            transition: all 300ms ease;
+            z-index: 0;
+        }
+        
+        button {
+            box-shadow: var(--box-shadow);
+        }
+        
+        button:hover {
+            box-shadow: none;
+        }
+        
+        .article_image img {
+            border-radius: var(--border-radius-2);
         }
