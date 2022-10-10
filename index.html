@@ -40,9 +40,9 @@
                         <h1>{{article.price+"$"}}</h1>
                     </div>
                     <div class="operation">
-                        <button class="buy btn btn-success" @click="addToCart(article)">buy</button>
+                        <button class="buy btn btn-success" @click="addToCart(article)" :disabled="fortune < article.price">buy</button>
                         <button class="btn btn-warning">{{article.quantity}}</button>
-                        <button class="sell btn btn-danger" v-on:click="removeFromCart(article)">sell</button>
+                        <button class="sell btn btn-danger" :style="article.quantity==0 ? `cursor:not-allowed;background-color:gray;` :'' " @click="removeFromCart(article)">sell</button>
                     </div>
                 </article>
             </div>

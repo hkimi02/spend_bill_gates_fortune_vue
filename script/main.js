@@ -41,14 +41,14 @@ const app = Vue.createApp({
         }
     },
     computed: {
-        /*checkPrice(price) {
+        checkPrice() {
             console.log(data.fortune);
-            return data.fortune < price;
+            return this.fortune < price;
         },
         checkQuantity(quantity) {
             console.log(quantity);
             return quantity == 0;
-        }*/
+        }
 
     },
 });

@@ -93,3 +93,7 @@
         table tr td {
             width: 12rem;
         }
+        
+        .disabled_btn {
+            cursor: not-allowed;
+        }
