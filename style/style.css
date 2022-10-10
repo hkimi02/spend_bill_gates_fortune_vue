@@ -76,4 +76,20 @@
         
         .article_image img {
             border-radius: var(--border-radius-2);
+            height: 18rem;
+            width: 15rem;
+        }
+        
+        .recipe {
+            text-align: center;
+            margin-top: 8%;
+        }
+        
+        table {
+            text-align: center;
+            margin-left: 30%;
+        }
+        
+        table tr td {
+            width: 12rem;
         }

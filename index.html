@@ -31,7 +31,7 @@
         </nav>
         <section>
             <div class="articles">
-                <article class="article" v-for="article in articles">
+                <article class="article" v-for="article in articles" :key="article.id">
                     <div class="article_image">
                         <img :src="article.path" alt="">
                     </div>
@@ -42,13 +42,30 @@
                     <div class="operation">
                         <button class="buy btn btn-success" @click="addToCart(article)">buy</button>
                         <button class="btn btn-warning">{{article.quantity}}</button>
-                        <button class="sell btn btn-danger" @click="removeFromCart(article)">sell</button>
+                        <button class="sell btn btn-danger" v-on:click="removeFromCart(article)">sell</button>
                     </div>
                 </article>
             </div>
         </section>
+        <div class="recipe">
+            <h3 v-if="purchases.length == 0">come on spend some money ! </h3>
+            <table v-else>
+                <legend>receipt</legend>
+                <tr>
+                    <td>name</td>
+                    <td>price</td>
+                    <td>quantity</td>
+                </tr>
+                <tr v-for="purchase in purchases" :key="purchase.id">
+                    <td>{{purchase.name}}</td>
+                    <td>{{purchase.price}}</td>
+                    <td>{{purchase.quantity}}</td>
+                </tr>
+            </table>
+        </div>
     </div>
-    <script src="./script/main.js"></script>
+    <script src="./script/main.js">
+    </script>
 </body>
 
 </html>
