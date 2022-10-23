@@ -47,24 +47,12 @@
                 </article>
             </div>
         </section>
-        <div class="recipe">
-            <h3 v-if="purchases.length == 0">come on spend some money ! </h3>
-            <table v-else>
-                <legend>receipt</legend>
-                <tr>
-                    <td>name</td>
-                    <td>price</td>
-                    <td>quantity</td>
-                </tr>
-                <tr v-for="purchase in purchases" :key="purchase.id">
-                    <td>{{purchase.name}}</td>
-                    <td>{{purchase.price}}</td>
-                    <td>{{purchase.quantity}}</td>
-                </tr>
-            </table>
-        </div>
+        <recipe-display :purchases="purchases"></recipe-display>
     </div>
-    <script src="./script/main.js">
+    <script src="./script/main.js"></script>
+    <script src="./components/recipeDisplay.js"></script>
+    <script>
+        const mountedApp = app.mount("#app");
     </script>
 </body>
 
