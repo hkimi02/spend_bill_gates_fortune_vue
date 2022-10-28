@@ -1,44 +1,41 @@
 app.component("recipe-display", {
-    template: `<div class="recipe">
-    <h3 v-if="purchases.length == 0">come on spend some money ! </h3>
-    <table v-else>
-        <legend>receipt</legend>
-        <tr>
-            <td>name</td>
-            <td>quantity</td>
-            <td>price</td>
-            </tr>
-        <tr v-for="purchase in purchases" :key="purchase.id">
-            <td>{{purchase.name}}</td>
-            <td>{{purchase.quantity}}</td>
-            <td>{{purchase.price}}</td>
-        </tr>
-        <tr>
-        <td></td>
-        <td></td>
-        <td>{{sommeTotale}}</td>
-        </tr>
-    </table>
-</div>
+    template: `
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <div class="recipe">
+            <h3 v-if="purchases.length == 0">come on spend some money ! </h3>
+            <h3 v-else>recipt</h3>
+        </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+      <div class="recipe-body"  v-if="purchases.length != 0">
+      <table>
+        <tr>
+          <td>name</td>
+          <td>quantity</td>
+          <td>price</td>
+          </tr>
+        <tr v-for="purchase in purchases" :key="purchase.id">
+            <td>{{purchase.name}}</td>
+            <td>{{purchase.quantity}}</td>
+            <td>{{purchase.price}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>{{sommeTotale}}</td>
+        </tr>
+      </table>
+      </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>

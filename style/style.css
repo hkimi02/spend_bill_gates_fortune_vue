@@ -98,3 +98,7 @@
         .disabled_btn {
             cursor: not-allowed;
         }
+        
+        .recipe-body table {
+            margin-left: -5%;
+        }
