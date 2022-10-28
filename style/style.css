@@ -38,6 +38,7 @@
             height: 3rem;
             width: 5rem;
             border-radius: var(--border-radius-1);
+            text-align: center;
         }
         
         .colored {

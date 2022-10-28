@@ -26,7 +26,7 @@
                 </h1>
                 <br> <span>{{"bill gates net fortune : "+fortune+"$"}}</span>
             </div>
-            <span class="cart"><center>cart ({{cart}})</center>
+            <span class="cart">cart ({{cart}})
         <br></span>
         </nav>
         <section>
@@ -53,6 +53,12 @@
     <script src="./components/recipeDisplay.js"></script>
     <script>
         const mountedApp = app.mount("#app");
+        const myModal = document.getElementById('myModal')
+        const myInput = document.getElementById('myInput')
+
+        myModal.addEventListener('shown.bs.modal', () => {
+            myInput.focus()
+        })
     </script>
 </body>
 
