@@ -28,7 +28,7 @@ app.component("recipe-display", {
         </tr>
         <tr>
             <td></td>
-            <td></td>
+            <td>total price : </td>
             <td>{{sommeTotale}}</td>
         </tr>
       </table>
